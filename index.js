@@ -26,8 +26,7 @@ var votes = [0,0,0];
 var currentScenarioIndex = 0;
 var currentScenario;
 
-  Scenario.findOne({idTree:0},function(err,scenariof){
-  });
+
 
 
 
@@ -39,7 +38,12 @@ var scenarios = [{plot:"Scenario1" , option1: {q:"goScenario2", next: 1 },option
 
 app.set('view engine', 'ejs');
 app.use('/javaScript',express.static('javaScript'));
+app.use('/css', express.static('css'));
+app.use('/img', express.static('img'));
 app.get('/',function(req,res){
+ res.render('index');
+});
+app.get('/index',function(req,res){
  res.render('index');
 });
 app.get('/hostView',function(req,res){
@@ -94,4 +98,7 @@ function findMaxVotes()
 }
 app.get('/playerView',function(req,res){
   res.render('playerView');
+});
+app.get('/contact',function(req,res){
+  res.render('contact');
 });
