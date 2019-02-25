@@ -1,0 +1,97 @@
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var socket = require('socket.io');
+var urlbodyparser = bodyParser.urlencoded({extended : false});
+var server = app.listen(4000,function(){
+  console.log("e pe fenta");
+});
+//DB connection
+const mongoose = require('mongoose');
+const Scenario = require('./models/scenario');
+//Connect to mongodb
+mongoose.Promise = global.Promise;
+
+  mongoose.connect('mongodb://localhost/butterfly',{useNewUrlParser: true});
+  mongoose.connection.once('open',function(){
+      console.log('db connected');
+      app.emit('dbReady');
+    }).on('error', function(error){
+      console.log(error);
+    });
+
+
+var io = socket(server);
+var votes = [0,0,0];
+var currentScenarioIndex = 0;
+var currentScenario;
+
+  Scenario.findOne({idTree:0},function(err,scenariof){
+  });
+
+
+
+var roundTimeLeft = 30;
+var scenarios = [{plot:"Scenario1" , option1: {q:"goScenario2", next: 1 },option2: {q:"goScenario2", next: 2  }, option3: {q:"goScenario2", next: 3  }},
+{plot:"Scenario2" , option1: {q:"goScenario2", next: -1 },option2: {q:"goScenario2", next: -1  }, option3: {q:"goScenario2", next: -1  }},
+{plot:"Scenario3" , option1: {q:"goScenario2", next: -1 },option2: {q:"goScenario2", next: -1  }, option3: {q:"goScenario2", next: -1  }},
+{plot:"Scenario4" , option1: {q:"goScenario2", next: 0 },option2: {q:"goScenario2", next: 0  }, option3: {q:"goScenario2", next: 0  }}];
+
+app.set('view engine', 'ejs');
+app.use('/javaScript',express.static('javaScript'));
+app.get('/',function(req,res){
+ res.render('index');
+});
+app.get('/hostView',function(req,res){
+  res.render('hostView',{question : "CARE PLM ESTI" , answer1: "SANGE" , answer2 : "CATERINCA",answer3: "FSD"});
+
+
+  });
+io.on('connection',function(socket){
+  console.log('conectat');
+  socket.on('vote',function(data){
+    votes[data.option]++;
+    console.log(votes);
+
+  });
+});
+
+setInterval(function(){
+  Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
+  io.emit("newScenario",{
+    scenario: scenariof,votes : votes});
+});
+  io.emit("currentTime", {time : roundTimeLeft});
+  roundTimeLeft--;
+  if(roundTimeLeft == 0)
+  {
+    if(findMaxVotes == 0)
+      currentScenarioIndex = 3* currentScenarioIndex ;
+    else if (findMaxVotes == 1)
+      currentScenarioIndex = 3* currentScenarioIndex + 1;
+    else {
+      currentScenarioIndex = 3* currentScenarioIndex + 2;
+    }
+    roundTimeLeft = 30;
+    votes = [0,0,0];
+    io.emit("enableVote");
+  }
+},1000);
+
+function findMaxVotes()
+{
+  var max = votes[0];
+  var maxi=0;
+  for(var i = 1 ; i < votes.length;i++)
+  {
+    if(max < votes[i])
+    {
+      max = votes[i];
+      maxi = i;
+    }
+  }
+  return maxi;
+}
+app.get('/playerView',function(req,res){
+  res.render('playerView');
+});
