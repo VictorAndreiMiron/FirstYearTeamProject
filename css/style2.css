@@ -5,7 +5,7 @@
 /* PLAYER VIEW BUTTONS */
 .site-btn2 {
 /*	left: 50%; */
-margin-top:25%;
+margin-top:15%; /*margin between buttons */
 	display: inline-block;
 	border: none;
 	font-size: 14px;
