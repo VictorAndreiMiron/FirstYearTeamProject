@@ -15,7 +15,7 @@ let massPopChart = new Chart(myChart, {
            'rgba(54, 162, 235, 0.6)',
            'rgba(255, 162, 132, 0.6)'
          ],
-         borderWidth:1,
+         borderWidth:0,
          borderColor:'#777',
          hoverBorderWidth:2,
          hoverBorderColor:'#000'
@@ -44,18 +44,77 @@ let massPopChart = new Chart(myChart, {
        },
        tooltips:{
          enabled:true
-       }
+       },
+       scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true,
+                min: 0,
+                stepSize : 1
+
+            }
+
+        }]
+    }
      }
    });
 
   var socket = io.connect('http://localhost:4000/');
    socket.on('newScenario', function(datas){
-     document.getElementById('plot').innerHTML = datas.scenario.plot;
-     document.getElementById('option1').innerHTML = datas.scenario.option1;
-     document.getElementById('option2').innerHTML = datas.scenario.option2;
-     document.getElementById('option3').innerHTML = datas.scenario.option3;
+     $("#plot").fadeOut("fast",function(){
+       $("#option1").fadeOut("slow",function(){
+         $("#hexagon3").fadeOut("slow",function(){
+           $("#option2").fadeOut("slow",function(){
+             $("#hexagon2").fadeOut("slow",function(){
+               $("#option3").fadeOut("slow",function(){
+                 $("#hexagon1").fadeOut("slow",function(){
+                   document.getElementById('plot').innerHTML = datas.scenario.plot;
+                   $("#plot").fadeIn("slow",function(){
+                     $("#hexagon1").fadeIn("slow",function(){
+                       $("#hexagon2").fadeIn("slow",function(){
+                         $("#hexagon3").fadeIn("slow",function(){
+                           document.getElementById('option1').innerHTML = datas.scenario.option1;
+                           $("#option1").fadeIn("slow",function(){
+                             document.getElementById('option2').innerHTML = datas.scenario.option2;
+                             $("#option2").fadeIn("slow",function(){
+                               document.getElementById('option3').innerHTML = datas.scenario.option3;
+                               $("#option3").fadeIn("slow");
+                             });
+
+                           });
+                         });
+                       });
+                     });
+                   });
+                 });
+               });
+
+             });
+
+         });
+         });
+     });
+   });
+
      updateLabels(datas.scenario.option1,datas.scenario.option2,datas.scenario.option3);
      updateScores(datas.votes);
+   });
+   socket.on('initialScenario',function(datas){
+     document.getElementById('plot').innerHTML = datas.scenario.plot;
+             document.getElementById('option1').innerHTML = datas.scenario.option1;
+
+               document.getElementById('option2').innerHTML = datas.scenario.option2;
+
+                 document.getElementById('option3').innerHTML = datas.scenario.option3;
+
+
+
+     updateLabels(datas.scenario.option1,datas.scenario.option2,datas.scenario.option3);
+     updateScores(datas.votes);
+   });
+   socket.on("votesUpdate",function(datas){
+      updateScores(datas.votes);
+      massPopChart.update();
    });
    socket.on('testEvent', function(data){
      document.getElementById("plot").innerHTML = data.plot;

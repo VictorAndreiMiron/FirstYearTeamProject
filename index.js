@@ -47,25 +47,33 @@ app.get('/index',function(req,res){
  res.render('index');
 });
 app.get('/hostView',function(req,res){
-  res.render('hostView',{question : "CARE PLM ESTI" , answer1: "SANGE" , answer2 : "CATERINCA",answer3: "FSD"});
+  res.render('hostView',{question : "" , answer1: "" , answer2 : "",answer3: ""});
 
 
   });
 io.on('connection',function(socket){
   console.log('conectat');
+ Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
+  io.emit("initialScenario",{
+    scenario: scenariof,votes : votes});
+});
   socket.on('vote',function(data){
     votes[data.option]++;
     console.log(votes);
+    io.emit("votesUpdate", {
+      votes: votes
+    });
 
   });
 });
 
 setInterval(function(){
-  Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
+  /*Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
   io.emit("newScenario",{
     scenario: scenariof,votes : votes});
-});
+});*/
   io.emit("currentTime", {time : roundTimeLeft});
+
   roundTimeLeft--;
   if(roundTimeLeft == 0)
   {
@@ -76,6 +84,10 @@ setInterval(function(){
     else {
       currentScenarioIndex = 3* currentScenarioIndex + 2;
     }
+    Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
+    io.emit("newScenario",{
+      scenario: scenariof,votes : votes});
+  });
     roundTimeLeft = 30;
     votes = [0,0,0];
     io.emit("enableVote");
