@@ -5,7 +5,7 @@
 /* PLAYER VIEW BUTTONS */
 .site-btn2 {
 /*  left: 50%; */
-margin-top:15%; /* margin between buttons and top of page*/
+  margin-top:15%; /* margin between buttons and top of page*/
   display: inline-block;
   border: none;
   font-size: 14px;
@@ -77,10 +77,10 @@ margin-top:15%; /* margin between buttons and top of page*/
 }
 
 body {
-  /* 
+  /*
   shows whole image but white appears - resize background later
-  background-position: center;  
-  background-repeat: no-repeat; 
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;        */
 
   height: 100%;
@@ -93,7 +93,7 @@ body {
 /* host view hexagons */ /* style for scenario on host-view6 */
 p2{
   text-align: center;
-  /* position: absolute; text is centered but covers the hexs if too long*/ 
+  /* position: absolute; text is centered but covers the hexs if too long*/
   font-size: 28px;
   width: 100%;
   color: #fff;
@@ -102,7 +102,7 @@ p2{
 }
 
 /* style for hexagon boxes - Options on host-view6 */
-p3 { 
+p3 {
   position: absolute;
   z-index: 1000;
   width: 100%;
