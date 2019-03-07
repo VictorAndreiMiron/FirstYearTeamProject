@@ -62,11 +62,11 @@ let massPopChart = new Chart(myChart, {
   var socket = io.connect('http://localhost:4000/');
    socket.on('newScenario', function(datas){
      $("#plot").fadeOut("fast",function(){
-       $("#option1").fadeOut("slow",function(){
+       $("#option3").fadeOut("slow",function(){
          $("#hexagon3").fadeOut("slow",function(){
            $("#option2").fadeOut("slow",function(){
              $("#hexagon2").fadeOut("slow",function(){
-               $("#option3").fadeOut("slow",function(){
+               $("#option1").fadeOut("slow",function(){
                  $("#hexagon1").fadeOut("slow",function(){
                    document.getElementById('plot').innerHTML = datas.scenario.plot;
                    $("#plot").fadeIn("slow",function(){
