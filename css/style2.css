@@ -113,13 +113,30 @@ p3 {
   font-weight: 500;
 }
 
+/* ---you can easily change the colours of the hexagons from here: --- */
+.hexColour1{
+ /* red */
+background-color: #9a1401; 
+}
+
+.hexColour2{
+ /* green */
+background-color: #017006;
+}
+
+.hexColour3{
+ /* blue */
+background-color: #0b1d66;
+}
+/* --- until here --- */
+
 .hexagon {
   display: inline-block;
   z-index: -1;
   position: relative;
   width: 255.9px;  /* moves upper&   part of hex right and left*/
   height: 147.22px;
-  background-color: #0a1c23;
+  /* background-color: #0a1c23; */
   margin: 73.61px 0;  /* MOVE HEXS UP AND DOWN 73.61  170.61*/
   border-left: solid 5px #6cddd5;
   border-right: solid 5px #6cddd5;
