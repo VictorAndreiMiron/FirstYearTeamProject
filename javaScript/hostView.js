@@ -78,7 +78,10 @@ let massPopChart = new Chart(myChart, {
                              document.getElementById('option2').innerHTML = datas.scenario.option2;
                              $("#option2").fadeIn("slow",function(){
                                document.getElementById('option3').innerHTML = datas.scenario.option3;
-                               $("#option3").fadeIn("slow");
+                               $("#option3").fadeIn("slow",function(){
+                                 updateLabels(datas.scenario.option1,datas.scenario.option2,datas.scenario.option3);
+                                 updateScores(datas.votes);
+                               });
                              });
 
                            });
@@ -96,8 +99,6 @@ let massPopChart = new Chart(myChart, {
      });
    });
 
-     updateLabels(datas.scenario.option1,datas.scenario.option2,datas.scenario.option3);
-     updateScores(datas.votes);
    });
    socket.on('initialScenario',function(datas){
      document.getElementById('plot').innerHTML = datas.scenario.plot;
