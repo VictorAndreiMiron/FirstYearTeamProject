@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:4000/');
+var socket = io.connect('http://butterfly-effect-w3.herokuapp.com/' ||'http://localhost:4000/');
 
 function vote(option)
 {
