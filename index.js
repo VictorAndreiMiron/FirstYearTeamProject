@@ -1,9 +1,13 @@
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var socket = require('socket.io');
 var urlbodyparser = bodyParser.urlencoded({extended : false});
-var server = app.listen(4000,function(){
+var server = app.listen(port,function(){
   console.log("e pe fenta");
 });
 //DB connection
@@ -103,7 +107,7 @@ setInterval(function(){
       io.emit("enableVote");}
     else {
       {
-      
+
         io.emit("ending",{
           scenario: scenariof,votes : votes});
         currentScenarioIndex = -1/3;
