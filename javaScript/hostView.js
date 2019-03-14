@@ -61,6 +61,7 @@ let massPopChart = new Chart(myChart, {
 var socket = io.connect('https://butterfly-effect-w3.herokuapp.com/' ||'http://localhost:5000/');
 
    socket.on('newScenario', function(datas){
+     document.getElementById('plot').innerHTML = datas.scenario.plot;
      $("#plot").fadeOut("fast",function(){
        $("#option3").fadeOut("slow",function(){
          $("#hexagon3").fadeOut("slow",function(){
