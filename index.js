@@ -59,10 +59,10 @@ io.on('connection',function(socket){
   console.log('conectat');
 
  Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
-  //if(scenariof.option1 != "Kill")
+  if(scenariof.option1 != "Kill")
   io.emit("initialScenario",{
     scenario: scenariof,votes : votes});
-//  else {
+  else {
     {
       io.emit("initialScenario",{
         scenario: scenariof,votes : votes});
@@ -70,7 +70,7 @@ io.on('connection',function(socket){
         scenario: scenariof,votes : votes
       });
     }
-//}
+}
 
 });
   socket.on('vote',function(data){
@@ -102,19 +102,19 @@ setInterval(function(){
     }
     console.log(currentScenarioIndex);
     Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
-    //if(scenariof.option1 != "Kill"){
+    if(scenariof.option1 != "Kill"){
     io.emit("newScenario",{
       scenario: scenariof,votes : votes});
       io.emit("enableVote");
-    //}
-    //else {
+    }
+    else {
       {
 
         io.emit("ending",{
           scenario: scenariof,votes : votes});
         currentScenarioIndex = -1/3;
       }
-    //}
+    }
 
   });
     roundTimeLeft = 30;
