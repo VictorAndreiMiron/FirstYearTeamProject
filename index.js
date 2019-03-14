@@ -20,6 +20,42 @@ mongoose.Promise = global.Promise;
   mongoose.connection.once('open',function(){
       console.log('db connected');
       app.emit('dbReady');
+      let scenario1 = new Scenario({
+        "idTree": "0",
+    "plot": "Root Scenario",
+    "option1": "Go to child 1",
+    "option2": "Go to child 2",
+    "option3": "Go to child 3"
+  });
+  scenario1.save();
+
+  let scenario2 = new Scenario({
+    "idTree": "1",
+"plot": "Root Scenario",
+"option1": "Kill",
+"option2": "Go to child 2",
+"option3": "Go to child 3"
+});
+
+scenario2.save();
+
+let scenario3 = new Scenario({
+  "idTree": "2",
+"plot": "Root Scenario",
+"option1": "Kill",
+"option2": "Go to child 2",
+"option3": "Go to child 3"
+});
+
+scenario3.save();
+let scenario4 = new Scenario({
+  "idTree": "3",
+"plot": "Root Scenario",
+"option1": "Kill",
+"option2": "Go to child 2",
+"option3": "Go to child 3"
+});
+scenario4.save();
     }).on('error', function(error){
       console.log(error);
     });
