@@ -57,14 +57,7 @@ app.get('/hostView',function(req,res){
   });
 io.on('connection',function(socket){
   console.log('conectat');
-  let test = new Scenario({
-    idTree:"4",
-    plot:"fs",
-    option1:"test",
-    option2:"test",
-    option3:"test"
-  });
-  test.save();
+
  Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
   //if(scenariof.option1 != "Kill")
   io.emit("initialScenario",{
