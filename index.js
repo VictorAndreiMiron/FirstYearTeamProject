@@ -54,8 +54,19 @@ app.get('/hostView',function(req,res){
 io.on('connection',function(socket){
   console.log('conectat');
  Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
+  if(scenariof.option1 != "Kill")
   io.emit("initialScenario",{
     scenario: scenariof,votes : votes});
+  else {
+    {
+      io.emit("initialScenario",{
+        scenario: scenariof,votes : votes});
+      io.emit("ending",{
+        scenario: scenariof,votes : votes
+      });
+    }
+  }
+
 });
   socket.on('vote',function(data){
     votes[data.option]++;
@@ -77,20 +88,32 @@ setInterval(function(){
   roundTimeLeft--;
   if(roundTimeLeft == 0)
   {
-    if(findMaxVotes == 0)
-      currentScenarioIndex = 3* currentScenarioIndex ;
-    else if (findMaxVotes == 1)
-      currentScenarioIndex = 3* currentScenarioIndex + 1;
-    else {
+    if(findMaxVotes() == 0)
+      currentScenarioIndex = 3* currentScenarioIndex +1 ;
+    else if (findMaxVotes() == 1)
       currentScenarioIndex = 3* currentScenarioIndex + 2;
+    else {
+      currentScenarioIndex = 3* currentScenarioIndex + 3;
     }
+    console.log(currentScenarioIndex);
     Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
+    if(scenariof.option1 != "Kill"){
     io.emit("newScenario",{
       scenario: scenariof,votes : votes});
+      io.emit("enableVote");}
+    else {
+      {
+      
+        io.emit("ending",{
+          scenario: scenariof,votes : votes});
+        currentScenarioIndex = -1/3;
+      }
+    }
+
   });
     roundTimeLeft = 30;
     votes = [0,0,0];
-    io.emit("enableVote");
+
   }
 },1000);
 

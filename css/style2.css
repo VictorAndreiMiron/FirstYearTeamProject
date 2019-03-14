@@ -80,11 +80,11 @@
 #rcorners3 {
   border-radius: 15px 50px;
   background: #fff;
-  padding: 20px; 
+  padding: 20px;
   opacity: 0.3;
   width: 90px;
-  height: 70px; 
-} 
+  height: 70px;
+}
 
 body {
   /*
@@ -126,7 +126,7 @@ p3 {
 /* ---you can easily change the colours of the hexagons from here: --- */
 .hexColour1{
  /* red */
-background-color: #9a1401; 
+background-color: #9a1401;
 }
 
 .hexColour2{
@@ -164,6 +164,7 @@ background-color: #0b1d66;
   transform: scaleY(0.5774) rotate(-45deg);
   background-color: inherit;
   left: 33.6439px; /* move up and bottom of hexs */
+
 }
 
 .hexagon:before {

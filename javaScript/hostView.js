@@ -79,6 +79,7 @@ let massPopChart = new Chart(myChart, {
                              $("#option2").fadeIn("slow",function(){
                                document.getElementById('option3').innerHTML = datas.scenario.option3;
                                $("#option3").fadeIn("slow",function(){
+                                 $("#myChart").fadeIn("slow");
                                  updateLabels(datas.scenario.option1,datas.scenario.option2,datas.scenario.option3);
                                  updateScores(datas.votes);
                                });
@@ -123,7 +124,19 @@ let massPopChart = new Chart(myChart, {
    socket.on('currentTime', function(data){
      document.getElementById('time').innerHTML = data.time;
    });
+   socket.on('ending',function(datas){
+     document.getElementById('plot').innerHTML = datas.scenario.plot;
+     $("#myChart").fadeOut("slow");
+     $("#option1").fadeOut("slow");
+     $("#option2").fadeOut("slow");
+     $("#option3").fadeOut("slow");
+     $("#hexagon3").fadeOut("slow");
+     $("#hexagon2").fadeOut("slow");
+     $("#hexagon1").fadeOut("slow");
 
+
+
+   });
    function updateLabels(var1,var2,var3) {
 
    var newLabels = [var1,var2,var3];
