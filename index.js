@@ -16,7 +16,7 @@ const Scenario = require('./models/scenario');
 //Connect to mongodb
 mongoose.Promise = global.Promise;
 
-  mongoose.connect(process.env.MONGODB_URI || process.env.MONGOHQ_URL ||'mongodb://localhost/butterfly',{useNewUrlParser: true});
+  mongoose.connect(process.env.MONGODB_URI ||'mongodb://butterfly:parola123@ds247327.mlab.com:47327/heroku_gfhrhs5t',{useNewUrlParser: true});
   mongoose.connection.once('open',function(){
       console.log('db connected');
       app.emit('dbReady');
