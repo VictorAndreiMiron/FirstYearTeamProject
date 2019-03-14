@@ -101,18 +101,19 @@ setInterval(function(){
     }
     console.log(currentScenarioIndex);
     Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
-    if(scenariof.option1 != "Kill"){
+    //if(scenariof.option1 != "Kill"){
     io.emit("newScenario",{
       scenario: scenariof,votes : votes});
-      io.emit("enableVote");}
-    else {
+      io.emit("enableVote");
+    //}
+    //else {
       {
 
         io.emit("ending",{
           scenario: scenariof,votes : votes});
         currentScenarioIndex = -1/3;
       }
-    }
+    //}
 
   });
     roundTimeLeft = 30;
