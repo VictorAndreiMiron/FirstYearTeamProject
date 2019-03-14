@@ -1,5 +1,4 @@
-//var socket = io.connect('https://butterfly-effect-w3.herokuapp.com/' ||'http://localhost:5000/');
-var socket = io();
+var socket = io.connect('https://butterfly-effect-w3.herokuapp.com/' ||'http://localhost:5000/');
 function vote(option)
 {
    socket.emit("vote",{option : option});
