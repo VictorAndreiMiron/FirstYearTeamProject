@@ -1,0 +1,35 @@
+{
+  "name": "firstyearteamproject",
+  "version": "1.0.0",
+  "description": "first launch",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.15",
+    "nodemon": "^1.18.10",
+    "socket.io": "^2.2.0"
+  },
+  "engines": {
+    "node": "10.14.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorAndreiMiron/FirstYearTeamProject.git"
+  },
+  "keywords": [
+    "butterfly",
+    "effect"
+  ],
+  "author": "Andrei Miron",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictorAndreiMiron/FirstYearTeamProject/issues"
+  },
+  "homepage": "https://github.com/VictorAndreiMiron/FirstYearTeamProject#readme"
+}
