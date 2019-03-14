@@ -58,10 +58,10 @@ app.get('/hostView',function(req,res){
 io.on('connection',function(socket){
   console.log('conectat');
  Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
-  if(scenariof.option1 != "Kill")
+  //if(scenariof.option1 != "Kill")
   io.emit("initialScenario",{
     scenario: scenariof,votes : votes});
-  else {
+//  else {
     {
       io.emit("initialScenario",{
         scenario: scenariof,votes : votes});
@@ -69,7 +69,7 @@ io.on('connection',function(socket){
         scenario: scenariof,votes : votes
       });
     }
-  }
+//}
 
 });
   socket.on('vote',function(data){
