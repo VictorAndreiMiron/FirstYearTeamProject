@@ -31,7 +31,7 @@ mongoose.Promise = global.Promise;
 
   let scenario2 = new Scenario({
     "idTree": "1",
-"plot": "Root Scenario",
+"plot": "sc1",
 "option1": "Kill",
 "option2": "Go to child 2",
 "option3": "Go to child 3"
@@ -41,7 +41,7 @@ scenario2.save();
 
 let scenario3 = new Scenario({
   "idTree": "2",
-"plot": "Root Scenario",
+"plot": "sc2",
 "option1": "Kill",
 "option2": "Go to child 2",
 "option3": "Go to child 3"
@@ -50,7 +50,7 @@ let scenario3 = new Scenario({
 scenario3.save();
 let scenario4 = new Scenario({
   "idTree": "3",
-"plot": "Root Scenario",
+"plot": "sc3",
 "option1": "Kill",
 "option2": "Go to child 2",
 "option3": "Go to child 3"
