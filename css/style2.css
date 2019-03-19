@@ -62,6 +62,7 @@
  .container2 {
   width: 64%;  
   position: relative;
+  padding: 0px 15px 0px;
   /*padding: 60px 15px 25px; */
 }
 
