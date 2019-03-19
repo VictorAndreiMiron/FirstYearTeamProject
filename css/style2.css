@@ -60,14 +60,14 @@
 /* END PLAYER VIEW BUTTONS */
 
  .container {
-  width: 54%;
+  width: 64%;
   position: relative;
   /*padding: 60px 15px 25px; */
 }
 
 .right-container{
   right: 0;
-  left: 54%;    /* was 64 */
+  left: 64%;    /* was 64 */
   height: 100%;
   position: fixed;
   z-index: 1;
