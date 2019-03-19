@@ -165,7 +165,7 @@ background-color: #faa55f;
   content: "";
   position: absolute;
   z-index: -1;
-  width: 185.31px;
+  width: 183.31px;
   height: 185.31px;  /* 181.31px moves upper &- part up and down*/
   -webkit-transform: scaleY(0.5774) rotate(-45deg);
   -ms-transform: scaleY(0.5774) rotate(-45deg);
