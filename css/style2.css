@@ -169,12 +169,12 @@ background-color: #0b1d66;
 
 .hexagon:before {
   top: -94.1561px;
-  border-top: solid 6.7711px #6cddd5;
-  border-right: solid 6.7711px #6cddd5;
+  border-top: solid 6.7711px #000;
+  border-right: solid 6.7711px #000;
 }
 
 .hexagon:after {
   bottom: -94.1561px;
-  border-bottom: solid 6.7711px #6cddd5;
-  border-left: solid 6.7711px #6cddd5;
+  border-bottom: solid 6.7711px #000;
+  border-left: solid 6.7711px #000;
 }
