@@ -152,10 +152,10 @@ background-color: #faa55f;
   display: inline-block;
   z-index: -1;
   position: relative;
-  width: 255.9px;  /* moves upper&   part of hex right and left*/
+  width: 256.9px;  /* 255.9moves upper&   part of hex right and left*/
   height: 147.22px;
   /* background-color: #0a1c23; */
-  margin: 73.61px 0;  /* MOVE HEXS UP AND DOWN 73.61  170.61*/
+  margin: 73.61px 0;  /* MOVE HEXS UP AND DOWN 73.61<-  170.61*/
   border-left: solid 5px #000;
   border-right: solid 5px #000;
 }
