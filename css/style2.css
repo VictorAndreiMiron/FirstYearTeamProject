@@ -61,8 +61,8 @@
 
  .container {
   /*width: 30%;*/
-  /*right: 60%;*/
-  left: 40;    /* was 64 */
+  right: 80%;
+  left: 0;    /* was 64 */
   height: 100%;
   
   position: relative;
