@@ -60,9 +60,8 @@
 /* END PLAYER VIEW BUTTONS */
 
  .container {
- /* width: 64%;
-  right: 100%; */
-  left: 0;    /* was 64 */
+  width: 64%;
+  left: 0;   
   height: 100%;
   
   position: relative;
