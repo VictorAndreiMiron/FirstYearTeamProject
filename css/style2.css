@@ -88,6 +88,10 @@
   opacity: 0.3;
   width: 90px;
   height: 70px;
+ 
+ position: absolute;
+ text-align: center;
+  
 }
 
 body {
