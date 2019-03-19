@@ -152,7 +152,7 @@ background-color: #faa55f;
   display: inline-block;
   z-index: -1;
   position: relative;
-  width: 256.9px;  /* 255.9moves upper&   part of hex right and left*/
+  width: 257.9px;  /* 255.9moves upper&   part of hex right and left*/
   height: 147.22px;
   /* background-color: #0a1c23; */
   margin: 73.61px 0;  /* MOVE HEXS UP AND DOWN 73.61<-  170.61*/
