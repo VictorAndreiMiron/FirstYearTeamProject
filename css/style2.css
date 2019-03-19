@@ -62,7 +62,7 @@
  .container {
   /*width: 30%;*/
   /*right: 60%;*/
-  left: 0;    /* was 64 */
+  left: 10;    /* was 64 */
   height: 100%;
   
   position: relative;
@@ -71,7 +71,7 @@
 
 .right-container{
   right: 0;
-  left: 54%;    /* was 64 */
+  left: 64%;    /* was 64 */
   height: 100%;
   position: fixed;
   z-index: 1;
