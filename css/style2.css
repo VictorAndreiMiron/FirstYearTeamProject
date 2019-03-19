@@ -134,7 +134,7 @@ p3 {
 /* ---you can easily change the colours of the hexagons from here: --- */
 .hexColour1{
  /* red */
-background-color: #f5876b;
+background-color: #f76155;
 }
 
 .hexColour2{
@@ -144,7 +144,7 @@ background-color: #64C7CC;
 
 .hexColour3{
  /* orange */
-background-color: #f76155;
+background-color: #faa55f;
 }
 /* --- until here --- */
 
