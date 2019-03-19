@@ -11,7 +11,7 @@
   font-size: 14px;
   font-weight: 700;
   font-style: italic;
-  height: 200px; /* added to INCREASE HEIGHT 150*/
+  height: 150px; /* added to INCREASE HEIGHT 150*/
   min-width: 600px;  /* was 186 width INCREASE WIDTH 200 300*/
   padding: 24px 30px;
   border-radius: 0;
