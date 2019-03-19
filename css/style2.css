@@ -12,7 +12,7 @@
   font-weight: 700;
   font-style: italic;
   height: 200px; /* added to INCREASE HEIGHT 150*/
-  min-width: 650px;  /* was 186 width INCREASE WIDTH 200 300*/
+  min-width: 700px;  /* was 186 width INCREASE WIDTH 200 300*/
   padding: 24px 30px;
   border-radius: 0;
   text-transform: uppercase;
@@ -138,13 +138,13 @@ background-color: #f5876b;
 }
 
 .hexColour2{
- /* green */
+ /* blue */
 background-color: #64C7CC;
 }
 
 .hexColour3{
- /* blue */
-background-color: #f3b76d;
+ /* orange */
+background-color: #f76155;
 }
 /* --- until here --- */
 
