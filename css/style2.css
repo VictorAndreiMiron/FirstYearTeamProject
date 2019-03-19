@@ -60,7 +60,11 @@
 /* END PLAYER VIEW BUTTONS */
 
  .container {
-  width: 30%;
+  /*width: 30%;*/
+  right: 60;
+  left: 0;    /* was 64 */
+  height: 100%;
+  
   position: relative;
   /*padding: 60px 15px 25px; */
 }
