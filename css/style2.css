@@ -148,8 +148,8 @@ background-color: #0b1d66;
   height: 147.22px;
   /* background-color: #0a1c23; */
   margin: 73.61px 0;  /* MOVE HEXS UP AND DOWN 73.61  170.61*/
-  border-left: solid 5px #6cddd5;
-  border-right: solid 5px #6cddd5;
+  border-left: solid 5px #000;
+  border-right: solid 5px #000;
 }
 
 .hexagon:before,
