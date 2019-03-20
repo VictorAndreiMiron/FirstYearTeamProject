@@ -72,7 +72,8 @@ io.on('connection',function(socket){
         scenario: scenariof,votes : votes
       });
     }
-})}
+});
+}
 
 else {
   Scenario.findOne({idTree:endingScenarioIndex},function(err,scenariof){
@@ -80,16 +81,14 @@ else {
    io.emit("initialScenario",{
      scenario: scenariof,votes : votes});
    else {
-     {
+
        io.emit("initialScenario",{
          scenario: scenariof,votes : votes});
        io.emit("ending",{
          scenario: scenariof,votes : votes
        });
-     }
- }
 
-
+ });
 }
 
 });
