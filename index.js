@@ -98,6 +98,7 @@ setInterval(function(){
   roundTimeLeft--;
   if(roundTimeLeft == 0)
   {
+    io.emit("disableVotes");
     if(findMaxVotes() == 0)
       currentScenarioIndex = 3* currentScenarioIndex +1 ;
     else if (findMaxVotes() == 1)
