@@ -8,7 +8,7 @@ function vote(option)
 
 }
 
-socket.on("ending",function(){
+socket.on("disableVotes",function(){
   document.getElementById('button0').disabled = false;
   document.getElementById('button1').disabled = false;
   document.getElementById('button2').disabled = false;
