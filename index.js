@@ -74,6 +74,8 @@ io.on('connection',function(socket){
 }
 
 });
+if(ended)
+io.emit('disableVotes');
   socket.on('vote',function(data){
     votes[data.option]++;
     console.log(votes);
@@ -85,7 +87,7 @@ io.on('connection',function(socket){
 
   });
 });
-
+var ended = false;
 setInterval(function(){
   /*Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
   io.emit("newScenario",{
@@ -106,13 +108,14 @@ setInterval(function(){
     console.log(currentScenarioIndex);
     Scenario.findOne({idTree:currentScenarioIndex},function(err,scenariof){
     if(scenariof.option1 != "Kill"){
+      ended=false;
     io.emit("newScenario",{
       scenario: scenariof,votes : votes});
       io.emit("enableVote");
     }
     else {
       {
-
+       ended = true;
         io.emit("ending",{
           scenario: scenariof,votes : votes});
         currentScenarioIndex = -1/3;
