@@ -87,11 +87,10 @@ else {
        io.emit("ending",{
          scenario: scenariof,votes : votes
        });
-
- });
 }
 
 });
+}
 if(ended)
 io.emit('disableVotes');
   socket.on('vote',function(data){
