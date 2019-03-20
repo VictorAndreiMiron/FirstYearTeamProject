@@ -8,6 +8,12 @@ function vote(option)
 
 }
 
+socket.on("ending",function(){
+  document.getElementById('button0').disabled = false;
+  document.getElementById('button1').disabled = false;
+  document.getElementById('button2').disabled = false;
+});
+
 socket.on("enableVote",function(){
   document.getElementById('button0').disabled = false;
   document.getElementById('button1').disabled = false;
