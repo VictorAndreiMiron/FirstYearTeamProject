@@ -72,7 +72,7 @@ io.on('connection',function(socket){
         scenario: scenariof,votes : votes
       });
     }
-}}
+})}
 
 else {
   Scenario.findOne({idTree:endingScenarioIndex},function(err,scenariof){
