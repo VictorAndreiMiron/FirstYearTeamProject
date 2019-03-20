@@ -81,7 +81,7 @@ io.on('connection',function(socket){
       votes: votes
     });
 
-    io.emit("disableVotes");
+
 
   });
 });
@@ -116,7 +116,6 @@ setInterval(function(){
         io.emit("ending",{
           scenario: scenariof,votes : votes});
         currentScenarioIndex = -1/3;
-        io.emit("disableVotes");
       }
     }
 
