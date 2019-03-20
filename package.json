@@ -8,13 +8,14 @@
     "express": "4.16.4",
     "jquery": "^3.3.1",
     "mongoose": "^5.4.15",
-    "nodemon": "^1.18.10",
     "socket.io": "2.2.0"
   },
   "engines": {
     "node": "10.14.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
