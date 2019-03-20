@@ -17,7 +17,7 @@ socket.on("disableVotes",function(){
   document.getElementById('button0').disabled = true;
   document.getElementById('button1').disabled = true;
   document.getElementById('button2').disabled = true;
-})
+});
 socket.on("enableVote",function(){
   document.getElementById('button0').disabled = false;
   document.getElementById('button1').disabled = false;
