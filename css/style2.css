@@ -125,7 +125,7 @@ p3 {
   position: absolute;
   z-index: 1000;
   width: 100%;
-  text-align: center;
+  /*text-align: center; ************************************/
   color: #fff;
   font-size: 20px;
   line-height: 1.3;
