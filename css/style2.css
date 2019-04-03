@@ -122,7 +122,7 @@ p2{
 
 /* style for hexagon boxes - Options on host-view6 */
 p3 {
-  position: fixed; /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaabsolute*/
+  position: relative; /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaabsolute*/
   z-index: 1000;
   width: 100%;
   text-align: center;
