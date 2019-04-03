@@ -146,40 +146,38 @@ background-color: #faa55f;
 /* --- until here --- */
 
 .hexagon {
-  display: inline-block;
-  z-index: -1;
+ display: inline-block;
   position: relative;
-  width: 257.9px;  /* 255.9moves upper&   part of hex right and left*/
-  height: 144.22px; /* 147.22px */
-  /* background-color: #0a1c23; */
-  margin: 73.61px 0;  /* MOVE HEXS UP AND DOWN 73.61<-  170.61*/
-  border-left: solid 5px #000;
-  border-right: solid 5px #000;
+  width: 350px; 
+  height: 202.07px;
+  /* background-color: #64C7CC; */
+  margin: 101.04px 0;
+  border-left: solid 5px #333333;
+  border-right: solid 5px #333333;
 }
 
 .hexagon:before,
 .hexagon:after {
   content: "";
   position: absolute;
-  z-index: -1;
-  width: 181.31px;
-  height: 181.31px;  /* 181.31px moves upper &- part up and down*/
+  z-index: 1;
+  width: 247.49px;
+  height: 247.49px;
   -webkit-transform: scaleY(0.5774) rotate(-45deg);
   -ms-transform: scaleY(0.5774) rotate(-45deg);
   transform: scaleY(0.5774) rotate(-45deg);
   background-color: inherit;
-  left: 33.6439px; /* 33.6439 move up and bottom of hexs */
-
+  left: 46.2563px;
 }
 
 .hexagon:before {
-  top: -94.1561px;
-  border-top: solid 6.7711px #000;
-  border-right: solid 6.7711px #000;
+  top: -123.7437px;
+  border-top: solid 7.0711px #333333;
+  border-right: solid 7.0711px #333333;
 }
 
 .hexagon:after {
-  bottom: -94.1561px;
-  border-bottom: solid 6.7711px #000;
-  border-left: solid 6.7711px #000;
+  bottom: -123.7437px;
+  border-bottom: solid 7.0711px #333333;
+  border-left: solid 7.0711px #333333;
 }
