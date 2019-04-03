@@ -152,8 +152,8 @@ background-color: #faa55f;
   height: 202.07px;
   /* background-color: #64C7CC; */
   margin: 101.04px 0;
-  border-left: solid 5px #333333;
-  border-right: solid 5px #333333;
+  border-left: solid 5px #000;
+  border-right: solid 5px #000;
 }
 
 .hexagon:before,
@@ -172,12 +172,12 @@ background-color: #faa55f;
 
 .hexagon:before {
   top: -123.7437px;
-  border-top: solid 7.0711px #333333;
-  border-right: solid 7.0711px #333333;
+  border-top: solid 7.0711px #000;
+  border-right: solid 7.0711px #000;
 }
 
 .hexagon:after {
   bottom: -123.7437px;
-  border-bottom: solid 7.0711px #333333;
-  border-left: solid 7.0711px #333333;
+  border-bottom: solid 7.0711px #000;
+  border-left: solid 7.0711px #000;
 }
