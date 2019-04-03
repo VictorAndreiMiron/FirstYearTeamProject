@@ -144,16 +144,15 @@ background-color: #1fbae0;
 background-color: #faa55f;
 }
 /* --- until here --- */
-
 .hexagon {
  display: inline-block;
   position: relative;
-  width: 350px; 
-  height: 202.07px;
+  width: 300px; 
+  height: 173.21px;
   /* background-color: #64C7CC; */
-  margin: 101.04px 0;
-  border-left: solid 5px #000;
-  border-right: solid 5px #000;
+  margin: 86.60px 0;
+  border-left: solid 5px #000000;
+  border-right: solid 5px #000000;
 }
 
 .hexagon:before,
@@ -161,23 +160,23 @@ background-color: #faa55f;
   content: "";
   position: absolute;
   z-index: 1;
-  width: 247.49px;
-  height: 247.49px;
+  width: 212.13px;
+  height: 212.13px;
   -webkit-transform: scaleY(0.5774) rotate(-45deg);
   -ms-transform: scaleY(0.5774) rotate(-45deg);
   transform: scaleY(0.5774) rotate(-45deg);
   background-color: inherit;
-  left: 46.2563px;
+  left: 38.9340px;
 }
 
 .hexagon:before {
-  top: -123.7437px;
-  border-top: solid 7.0711px #000;
-  border-right: solid 7.0711px #000;
+  top: -106.0660px;
+  border-top: solid 7.0711px #000000;
+  border-right: solid 7.0711px #000000;
 }
 
 .hexagon:after {
-  bottom: -123.7437px;
-  border-bottom: solid 7.0711px #000;
-  border-left: solid 7.0711px #000;
+  bottom: -106.0660px;
+  border-bottom: solid 7.0711px #000000;
+  border-left: solid 7.0711px #000000;
 }
