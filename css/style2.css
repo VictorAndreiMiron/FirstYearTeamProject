@@ -71,10 +71,9 @@
   left: 60%;    /* was 64 */
   height: 100%;
   position: fixed;
- /*position: relative; -----&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&777*/
   z-index: 1;
   top: 0;
-  overflow-y: scroll;
+  overflow-x: hidden;
   padding-top: 100px; /* increase space on top */
 }
 
