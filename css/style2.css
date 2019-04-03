@@ -61,8 +61,8 @@
 /* END PLAYER VIEW BUTTONS */
 
  .container2 {
- /* text-align: center; */
- align-items: center;
+  text-align: center; 
+ /* align-items: center; */
     /*555555555555555555555555555555*/
   width: 64%;  
   position: relative;
