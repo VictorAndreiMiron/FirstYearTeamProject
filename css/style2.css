@@ -61,8 +61,8 @@
 /* END PLAYER VIEW BUTTONS */
 
  .container2 {
-  text-align: center; 
- /* align-items: center; */
+ /* text-align: center; 
+  align-items: center; */
     /*555555555555555555555555555555*/
   width: 64%;  
   position: relative;
@@ -122,7 +122,7 @@ p2{
 
 /* style for hexagon boxes - Options on host-view6 */
 p3 {
-  position: relative; /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaabsolute*/
+  position: absolute; /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaabsolute*/
   z-index: 1000;
   width: 100%;
   text-align: center;
