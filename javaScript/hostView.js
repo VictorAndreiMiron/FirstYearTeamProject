@@ -140,7 +140,7 @@ var socket = io.connect('https://butterfly-effect-w3.herokuapp.com/' ||'http://l
    });
    function updateLabels(var1,var2,var3) {
 
-   var newLabels = [var1,var2,var3];
+   var newLabels = [" "," "," "];
 
 
 massPopChart.data.labels = newLabels;
