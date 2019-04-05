@@ -35,7 +35,7 @@ var currentScenario;
 
 
 
-var roundTimeLeft = 30;
+var roundTimeLeft = 45;
 var scenarios = [{plot:"Scenario1" , option1: {q:"goScenario2", next: 1 },option2: {q:"goScenario2", next: 2  }, option3: {q:"goScenario2", next: 3  }},
 {plot:"Scenario2" , option1: {q:"goScenario2", next: -1 },option2: {q:"goScenario2", next: -1  }, option3: {q:"goScenario2", next: -1  }},
 {plot:"Scenario3" , option1: {q:"goScenario2", next: -1 },option2: {q:"goScenario2", next: -1  }, option3: {q:"goScenario2", next: -1  }},
@@ -144,7 +144,7 @@ setInterval(function(){
     }
 
   });
-    roundTimeLeft = 30;
+    roundTimeLeft = 45;
     votes = [0,0,0];
 
   }
